@@ -1,0 +1,55 @@
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Имя: {self.name}")
+        print(f"Возраст: {self.age}")
+
+class Student(Person):
+    def __init__(self, name, age, group, gpa):
+        super().__init__(name, age)
+        self.group = group
+        self.gpa = gpa
+
+    def display_info(self):
+        super().display_info()
+        print(f"Группа: {self.group}")
+        print(f"Средний балл: {self.gpa}")
+
+
+class Teacher(Person):
+    def __init__(self, name, age, subject, experience):
+        super().__init__(name, age)
+        self.subject = subject
+        self.experience = experience
+
+    def display_info(self):
+        super().display_info()
+        print(f"Предмет: {self.subject}")
+        print(f"Стаж: {self.experience} лет")
+
+
+class AdminStaff(Person):
+    def __init__(self, name, age, position, department):
+        super().__init__(name, age)
+        self.position = position
+        self.department = department
+
+    def display_info(self):
+        super().display_info()
+        print(f"Должность: {self.position}")
+        print(f"Отдел: {self.department}")
+
+
+student = Student("Абзал", 20, "IS-21", 3.8)
+teacher = Teacher("Ержан", 19, "лодырь", 15)
+admin = AdminStaff("Марат", 35, "Менеджер", "Кадровый отдел")
+
+student.display_info()
+print()
+teacher.display_info()
+print()
+admin.display_info()
